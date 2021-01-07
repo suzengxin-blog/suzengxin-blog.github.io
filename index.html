@@ -4,81 +4,54 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>首页</title>
+	<title>博客</title>
+    
+    <!-- jQuery(Bootstrap的JavaScript插件需要引入jQuery，务必在bootstrap.min.js之前引入) -->
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" data-integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" data-crossorigin="anonymous">
+	
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" data-integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" data-crossorigin="anonymous"></script>
+	
+	<link rel="stylesheet" type="text/css" href="live2d/waifu.css"/>
 </head>
 
 <body>
-	<h1>个人博客</h1>
-	<div class="pio-container right" style="bottom: -2rem; z-index: 1;">
-		<div class="pio-action">
-			<span class="pio-home"></span>
-			<span class="pio-skin"></span>
-			<span class="pio-info"></span>
-			<span class="pio-night"></span>
-			<span class="pio-close"></span>
+<div class="container-fluid">
+	<div class="row">
+		<div id="title" class="col-xs-8 col-xs-offset-2">
+			<p class="text-left" style="font-size: 8em; font-family: '宋体';">倾城の陌</p>
+			<p class="text-center" style="font-size: 4em; font-family: '宋体';">欢迎访问我的个人博客！</p>
 		</div>
-		<canvas id="pio" width="600" height="800" style="width: 14rem;"></canvas>
-		<div class="pio-dialog">欢迎来到我的博客</div>
 	</div>
+</div>
+
+<div class="waifu">
+	<div class="waifu-tips"></div>
+	<canvas id="live2d" width="280" height="600" class="live2d"></canvas>
+	<div class="waifu-tool">
+		<span class="fui-home"></span>
+		<span class="fui-chat"></span>
+		<span class="fui-eye"></span>
+		<span class="fui-user"></span>
+		<span class="fui-photo"></span>
+		<span class="fui-info-circle"></span>
+		<span class="fui-cross"></span>
+	</div>
+    <script src="live2d/live2d.js"></script>
+	<script src="live2d/waifu-tips.js"></script>
+</div>
+
 </body>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Pio@2.4/static/pio.min.css"/>
-<script defer="defer" src="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Pio@2.4/static/l2d.min.js"></script>
-<script defer="defer"  src="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Pio@2.4/static/pio.min.js"
-	  onload='
-	    if (screen.width > screen.height)
-	    {
-	      let pio_container = document.createElement("div");
-	      pio_container.classList.add("pio-container");
-	      pio_container.classList.add("right");
-	      document.body.insertAdjacentElement("beforeend", pio_container);
-	      let pio_action = document.createElement("div");
-	      pio_action.classList.add("pio-action");
-	      pio_container.insertAdjacentElement("beforeend", pio_action);
-	      let pio_canvas = document.createElement("canvas");
-	      pio_canvas.id = "pio";
-	      pio_canvas.style.width = "14rem";
-	      pio_canvas.width = "600";
-	      pio_canvas.height = "800";
-	      pio_container.insertAdjacentElement("beforeend", pio_canvas);
-	      let pio = new Paul_Pio({
-	        "mode": "draggable",
-	        "hidden": true,
-	        "content": {
-	          "skin": ["要换成我的朋友吗？", "让她放个假吧~"],
-	          "custom": [{
-	            "selector": "a",
-	            "type": "link",
-	          }, {
-	            "selector": ".sidebar-toggle",
-	            "text": "打开侧边栏叭~"
-	          }, {
-	            "selector": ".effect-info",
-	            "text": "哇，你发现了什么！"
-	          }, {
-	            "selector": "#sidebar-search-input",
-	            "text": "想搜索什么呢？很多干货哦！"
-	          }, {
-	            "selector": "#toc",
-	            "text": "这是目录~"
-	          }, {
-	            "selector": ".page-title",
-	            "text": "这是标题~"
-	          }, {
-	            "selector": ".v",
-	            "text": "评论没有审核，要对自己的发言负责哦~"
-	          }]
-	        },
-	        "model": [
-	          "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/33/model.2018.bls-winter.json",
-	          "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/platelet-2/model.json",
-	          "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/xiaomai/xiaomai.model.json",
-	          "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/mashiro/seifuku.model.json",
-	          "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/seele/model.json",
-	          "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/Violet/14.json",
-	          "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/Kobayaxi/Kobayaxi.model.json",
-	          "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/mikoto/mikoto.model.json",
-	          "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/uiharu/uiharu.model.json"]
-	      });
-	    }'
-	></script>
+<style>
+	#title {
+		position:fixed;
+	    top:24%;
+	    right:0;
+	    left:0;
+	    margin:auto; 
+	}
+</style>
 </html>
