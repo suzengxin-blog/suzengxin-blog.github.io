@@ -22,10 +22,32 @@
 <div class="body-color"></div>
 
 <div class="container-fluid">
-	<div class="row">
+	<div id="content" class="row">
 		<div id="title" class="col-xs-8 col-xs-offset-2">
 			<p class="text-left" style="font-size: 8vw; font-family: '宋体';">倾城の陌</p>
 			<p class="text-center" style="font-size: 5vw; font-family: '宋体';">欢迎访问我的个人博客！</p>
+		</div>
+		
+		<div id="contact" class="col-xs-8 col-xs-offset-2" style="display:none;">
+			<p class="text-left" style="font-size: 3vw; font-family: '宋体';">Contact：</p>
+			<div class="row">
+				<div class="col-xs-10 col-xs-offset-1">
+					<ul>
+						<li>QQ: 876868792</li>
+						<li>WeChat: Nobel-Angle</li>
+						<li>Phone: +86 13522097400</li>
+						<li>E-mail: suzengxin@foxmail.com</li>
+						<li>Site: <a href="https://tianlangcloud.com" target="_blank">https://tianlangcloud.com</a></li>
+						<li>GitHub: <a href="https://github.com/suzengxin" target="_blank">https://github.com/suzengxin</a></li>
+						<li>Blog: <a href="https://suzengxin-blog.github.io">https://suzengxin-blog.github.io</a></li>
+					</ul>
+				</div>
+			</div>	
+		</div>
+		
+		<div id="sign" class="col-xs-8 col-xs-offset-2" style="display:none;">
+			<p class="text-center" style="font-size: 5vw; font-family: '宋体';">陌上颜如玉</p>
+			<p class="text-center" style="font-size: 5vw; font-family: '宋体';">公子世无双</p>
 		</div>
  	</div>
 </div>
@@ -46,11 +68,19 @@
 	<script src="live2d/waifu-tips.js"></script>
 </div>
 
+<button id="prev" style="border: 0; outline: none; background-color: transparent; display:none;" value="prev" onclick="prev()">
+	<span class="glyphicon glyphicon-chevron-up" style="font-size: 2vw"></span>
+</button>
+<button id="next" style="border: 0; outline: none; background-color: transparent;" value="#contact" onclick="next()">
+	<span class="glyphicon glyphicon-chevron-down" style="font-size: 2vw"></span>
+</button>
+
 </body>
 <style>
 	body {
 		background-image: url("images/dnf_01.jpeg");
-		background-size: contain;
+		background-repeat: no-repeat;
+		background-size: cover;
 		-webkit-background-size: cover;
 		-o-background-size: cover;
 		-moz-background-size: cover;
@@ -64,20 +94,98 @@
 		background-color: rgba(255, 255, 255, 1);
 	}
 	
-	#title {
-		position:fixed;
+	#title, #contact, #sign {
 	    top:24%;
-	    right:0;
-	    left:0;
-	    margin:auto; 
+	}
+	
+	#contact ul li{
+		font-size: 2vw; 
+		font-family: '宋体';
+	}
+	
+	#contact ul li a:hover{
+		color: red;
+		text-decoration: none;
+	}
+	
+	#prev {
+		position: absolute;
+		left: 5px;
+  		bottom: 5px;
+	}
+	#next {
+		position: absolute;
+		right: 0px;
+  		bottom: 5px;
+	}
+	#next:hover, #prev:hover {
+		color: red;
+		cursor: pointer;
 	}
 </style>
 
 <script>
 	$(function(){
-	    $(".body-color").fadeOut(1500);
-	    $(".body-color").fadeIn(1500);
+		var w = document.documentElement.clientWidth;
+	    var h = document.documentElement.clientHeight;
+		content.setAttribute("style", "height: "+h+"px; width: "+w+"px;");
 	})
+	
+	//监听浏览器变化
+    window.onresize = function() {
+	    location.reload();
+	}
+	
+	//淡入淡出效果
+	function bodyColor() {
+		$(".body-color").fadeOut(500);
+	    $(".body-color").fadeIn(500);
+	    //$(".body-color").fadeTo("slow", 0.6);
+	}
+	
+	//标签页ID标识
+	var ids = ["#title", "#contact", "#sign"];
+	
+	//下一页
+	function next(){
+		var val = $("#next").val();
+		divhide(val);
+			
+		if (val == ids[ids.length - 1]) {
+			$("#next").hide();
+		}
+		
+		$("#prev").show();
+	}
+	//上一页
+	function prev(){
+		var val = $("#prev").val();
+		divhide(val);
+		
+		if (val == ids[0]) {
+			$("#prev").hide();
+		}
+		
+		$("#next").show();
+	}
+	//标签页淡入淡出效果
+	function divhide(val) {
+		bodyColor();
+		for(var num = 0; num < ids.length; num++){
+			var id = ids[num];
+			$(id).fadeOut(0);
+			
+			if(id == val) {
+				if(num != 0) {
+					$("#prev").val(ids[num-1]);
+				}
+				if(num != (ids.length - 1)) {
+					$("#next").val(ids[num+1]);
+				}
+			}
+		}
+		$(val).fadeIn(500);
+	}
 </script>
 
 </html>
