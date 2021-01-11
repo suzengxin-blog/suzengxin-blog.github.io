@@ -16,10 +16,54 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" data-integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" data-crossorigin="anonymous"></script>
 	
 	<link rel="stylesheet" type="text/css" href="live2d/waifu.css"/>
+	
+	<link rel="stylesheet" type="text/css" href="static/blog.css"/>
+	<script src="static/blog.js"></script>
 </head>
 
 <body>
 <div class="body-color"></div>
+
+<nav class="nav_blog">
+	<div class="nav_show">
+		<button type="button" class="btn btn-md btn-default" onclick="nav_show()"><span class="glyphicon glyphicon-list"></span></button>
+	</div>
+	<div class="nav_content">
+		<div class="nav_hide">
+			<p><span class="glyphicon glyphicon-remove" onclick="nav_hide()"></span></p>
+		</div>
+		<div class="nav_photo">
+			<img src="https://suzengxin.github.io/images/photo.jpg" class="img-circle">
+		</div>
+	  	<ul class="list-unstyled">
+	  		<li onclick="location='/'"><span class="glyphicon glyphicon-home"></span>首<span></span>页</li>
+	  		<li onclick="location='/rose'"><span class="glyphicon glyphicon-heart"></span>玫<span></span>瑰</li>
+		</ul>
+	</div>
+</nav>
+
+<div class="waifu">
+	<div class="waifu-tips"></div>
+	<canvas id="live2d" width="280" height="600" class="live2d"></canvas>
+	<div class="waifu-tool">
+		<span class="fui-home"></span>
+		<span class="fui-chat"></span>
+		<span class="fui-eye"></span>
+		<span class="fui-user"></span>
+		<span class="fui-photo"></span>
+		<span class="fui-info-circle"></span>
+		<span class="fui-cross"></span>
+	</div>
+    <script src="live2d/live2d.js"></script>
+	<script src="live2d/waifu-tips.js"></script>
+</div>
+
+<button id="prev" style="border: 0; outline: none; background-color: transparent; display:none;" value="prev" onclick="prev()">
+	<span class="glyphicon glyphicon-chevron-up" style="font-size: 2vw"></span>
+</button>
+<button id="next" style="border: 0; outline: none; background-color: transparent;" value="#contact" onclick="next()">
+	<span class="glyphicon glyphicon-chevron-down" style="font-size: 2vw"></span>
+</button>
 
 <div class="container-fluid">
 	<div id="content" class="row">
@@ -52,29 +96,6 @@
  	</div>
 </div>
 	
-<div class="waifu">
-	<div class="waifu-tips"></div>
-	<canvas id="live2d" width="280" height="600" class="live2d"></canvas>
-	<div class="waifu-tool">
-		<span class="fui-home"></span>
-		<span class="fui-chat"></span>
-		<span class="fui-eye"></span>
-		<span class="fui-user"></span>
-		<span class="fui-photo"></span>
-		<span class="fui-info-circle"></span>
-		<span class="fui-cross"></span>
-	</div>
-    <script src="live2d/live2d.js"></script>
-	<script src="live2d/waifu-tips.js"></script>
-</div>
-
-<button id="prev" style="border: 0; outline: none; background-color: transparent; display:none;" value="prev" onclick="prev()">
-	<span class="glyphicon glyphicon-chevron-up" style="font-size: 2vw"></span>
-</button>
-<button id="next" style="border: 0; outline: none; background-color: transparent;" value="#contact" onclick="next()">
-	<span class="glyphicon glyphicon-chevron-down" style="font-size: 2vw"></span>
-</button>
-
 </body>
 <style>
 	body {
@@ -95,7 +116,7 @@
 	}
 	
 	#title, #contact, #sign {
-	    top:24%;
+	    top: 24%;
 	}
 	
 	#contact ul li{
@@ -110,8 +131,8 @@
 	
 	#prev {
 		position: absolute;
-		left: 5px;
-  		bottom: 5px;
+		right: 5px;
+  		top: 5px;
 	}
 	#next {
 		position: absolute;
@@ -140,7 +161,6 @@
 	function bodyColor() {
 		$(".body-color").fadeOut(500);
 	    $(".body-color").fadeIn(500);
-	    //$(".body-color").fadeTo("slow", 0.6);
 	}
 	
 	//标签页ID标识
