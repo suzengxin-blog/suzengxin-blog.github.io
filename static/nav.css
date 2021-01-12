@@ -1,4 +1,4 @@
-.nav_blog {
+.nav_load {
 	z-index: 99;
 	position: absolute;
 }
@@ -20,8 +20,11 @@
 .nav_content .nav_hide p {
 	font-size: 18px;
 	line-height: 30px;
-	text-align: right;
-	margin: 10px;
+	margin: 10px 10px 0px 10px;
+}
+
+.nav_content .nav_hide p span{
+	float: right;
 }
 
 .nav_content .nav_hide p span:hover{
@@ -32,26 +35,51 @@
 
 .nav_content .nav_photo img {
 	width: 230px;
-	margin: 30px;
+	margin: 0px 0px 0px 30px;
 }
 
-.nav_content ul li {
-	font-size: 14px;
-	line-height: 40px;
-	text-align: center;
+#nav_title div {
+	background: none;
+	border: none;
+}
+
+#nav_title .panel {
 	border-bottom-style: solid;
 	border-color: #aaaaaa;
 	border-width: 1px;
+}
+
+#nav_title .panel p {
+	color: #dFdFdF;
+	font-size: 14px;
 	font-weight: 600;
+	line-height: 40px;
+	text-align: center;
 }
 
-.nav_content ul li:hover {
-	cursor: pointer;
+#nav_title .panel p a {
+	text-decoration: none;
+}
+
+#nav_title .panel p a:hover {
 	font-size: 16px;
-	background-image: linear-gradient(45deg, Cyan 0%, Magenta 50%, Yellow 100%);
+	color: #99ffff;
 }
 
-.nav_content ul li span {
+#nav_title .panel p a:active { 
+	color: #D200D2; 
+}
+
+#nav_title .panel ol li:hover { 
+	cursor: pointer;
+	color: #99ffff;
+}
+
+#nav_title .panel ol li:active { 
+	color: #D200D2; 
+}
+
+#nav_title span {
 	margin-right: 10px;
 }
 
@@ -67,3 +95,4 @@
 ::-webkit-scrollbar-track {
 	box-shadow: 1px 1px 5px rgba(220, 220, 220, 0.9) inset;
 }
+
