@@ -3,6 +3,13 @@ $(function(){
 });
 
 /**
+ * 监听浏览器变化，刷新页面
+ **/
+window.onresize = function() {
+    location.reload();
+}
+
+/**
  * 使用方法，在html中加入下面的标签，
  * <!-- 导航 -->
  * <nav class="nav_load"></nav>
