@@ -48,7 +48,7 @@ function nav () {
 				"<div class='panel panel-default'>" + 
 					"<div class='panel-heading'>" + 
 						"<p class='panel-title'>" + 
-							"<a data-parent='nav_blog' href='/editor'><span class='glyphicon glyphicon-pencil'></span>博<span></span>客</a>" + 
+							"<a data-parent='nav_blog' href='/html/editor'><span class='glyphicon glyphicon-pencil'></span>博<span></span>客</a>" + 
 						"</p>" + 
 					"</div>" + 
 				"</div>" +
@@ -63,7 +63,7 @@ function nav () {
 					"<div id='nav_title_web' class='panel-collapse collapse'>" + 
 						"<div class='panel-body'>" + 
 							"<ol>" + 
-								"<li onclick='location=\"/rose\"'><span class='glyphicon glyphicon-heart'></span>玫<span></span>瑰</li>" + 
+								"<li onclick='location=\"/html/web/rose\"'><span class='glyphicon glyphicon-heart'></span>玫<span></span>瑰</li>" + 
 							"</ol>" + 
 						"</div>" + 
 					"</div>" + 

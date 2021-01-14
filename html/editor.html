@@ -106,7 +106,7 @@
 		var value = $("#editor").val();
 		
 		if(value.length > 0) {
-			$.get("https://suzengxin-blog.github.io/template", function(data){
+			$.get("https://suzengxin-blog.github.io/html/template", function(data){
 				var content = insertStr(data, 1846, value);
 				
 				var timestamp = new Date().getTime();
