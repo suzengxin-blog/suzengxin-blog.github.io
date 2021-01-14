@@ -48,12 +48,26 @@
 			<div id="download_url"></div>
 		</div>
 	</div>
+	
+	<div id="error" style="display: none; width: 30vw;">
+		<div class="alert alert-danger alert-dismissable">
+            <button type="button" class="close" onclick="alertHide()">
+                &times;
+            </button>错误！内容不能为空。
+        </div>
+	</div>
 </div>
 
 </body>
 
 <style>
 	#download {
+		position: absolute;
+		top: 30vh;
+		left: 35vw;
+	}
+	
+	#error {
 		position: absolute;
 		top: 30vh;
 		left: 35vw;
@@ -83,23 +97,29 @@
 	});
 	
 	function alertHide() {
+		$("#error").hide();
 		$("#download").hide();
 		$("#download a").remove();
 	}
 	
 	function createHtml() {
 		var value = $("#editor").val();
-
-		$.get("https://suzengxin-blog.github.io/template", function(data){
-			var content = insertStr(data, 1846, value);
-			
-			var timestamp = new Date().getTime();
-			var name = 'blog' + timestamp + '.html';
-			exportBlog(name, content);
-		});
 		
-		$("#download a").remove();
-		$("#download").show();
+		if(value.length > 0) {
+			$.get("https://suzengxin-blog.github.io/template", function(data){
+				var content = insertStr(data, 1846, value);
+				
+				var timestamp = new Date().getTime();
+				var name = 'blog' + timestamp + '.html';
+				exportBlog(name, content);
+			});
+			
+			$("#download a").remove();
+			$("#download").show();
+		} else {
+			$("#error").show();
+			$("#error").fadeOut(4000);
+		}
 	}
 	
 	function insertStr(soure, start, newStr){   

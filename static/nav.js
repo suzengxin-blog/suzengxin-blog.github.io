@@ -44,6 +44,15 @@ function nav () {
 					"</div>" + 
 				"</div>" + 
 				
+				"<!-- 博客 -->" + 
+				"<div class='panel panel-default'>" + 
+					"<div class='panel-heading'>" + 
+						"<p class='panel-title'>" + 
+							"<a data-parent='nav_blog' href='/editor'><span class='glyphicon glyphicon-pencil'></span>博<span></span>客</a>" + 
+						"</p>" + 
+					"</div>" + 
+				"</div>" +
+				
 				"<!-- WEB -->" + 
 				"<div class='panel panel-default'>" + 
 					"<div class='panel-heading'>" + 
