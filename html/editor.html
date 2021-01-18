@@ -107,8 +107,8 @@
 		
 		if(value.length > 0) {
 			$.get("https://suzengxin-blog.github.io/html/template", function(data){
-				var content = insertStr(data, 2000, value);
-				console.log(content);
+				var content = insertStr(data, 2041, value);
+				//console.log(content);
 				var timestamp = new Date().getTime();
 				var name = 'blog' + timestamp + '.html';
 				exportBlog(name, content);
