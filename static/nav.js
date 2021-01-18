@@ -48,7 +48,16 @@ function nav () {
 				"<div class='panel panel-default'>" + 
 					"<div class='panel-heading'>" + 
 						"<p class='panel-title'>" + 
-							"<a data-parent='nav_blog' href='/html/editor'><span class='glyphicon glyphicon-pencil'></span>博<span></span>客</a>" + 
+							"<a data-parent='nav_blog' href='/html/blog'><span class='glyphicon glyphicon-list-alt'></span>博<span></span>客</a>" + 
+						"</p>" + 
+					"</div>" + 
+				"</div>" +
+				
+				"<!-- 编辑 -->" + 
+				"<div class='panel panel-default'>" + 
+					"<div class='panel-heading'>" + 
+						"<p class='panel-title'>" + 
+							"<a data-parent='nav_editor' href='/html/editor'><span class='glyphicon glyphicon-pencil'></span>编<span></span>辑</a>" + 
 						"</p>" + 
 					"</div>" + 
 				"</div>" +
@@ -57,7 +66,7 @@ function nav () {
 				"<div class='panel panel-default'>" + 
 					"<div class='panel-heading'>" + 
 						"<p class='panel-title'>" + 
-							"<a data-toggle='collapse' data-parent='nav_title' href='#nav_title_web'>WEB相关内容</a>" + 
+							"<a data-toggle='collapse' data-parent='nav_title' href='#nav_title_web'>WEB精选内容</a>" + 
 						"</p>" + 
 					"</div>" + 
 					"<div id='nav_title_web' class='panel-collapse collapse'>" + 

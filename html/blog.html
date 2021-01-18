@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>我的博客 - 倾城の陌</title>
+    
+    <!-- jQuery(Bootstrap的JavaScript插件需要引入jQuery，务必在bootstrap.min.js之前引入) -->
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" data-integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" data-crossorigin="anonymous">
+	
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" data-integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" data-crossorigin="anonymous"></script>
+	
+	<link rel="stylesheet" type="text/css" href="https://suzengxin-blog.github.io/live2d/waifu.css"/>
+	
+	<link rel="stylesheet" type="text/css" href="https://suzengxin-blog.github.io/static/nav.css"/>
+	<script charset="utf-8" src="https://suzengxin-blog.github.io/static/nav.js"></script>
+</head>
+
+<body id=>
+<!-- 导航栏 -->
+<nav class="nav_load"></nav>
+
+<div class="waifu">
+	<div class="waifu-tips"></div>
+	<canvas id="live2d" width="280" height="600" class="live2d"></canvas>
+	<div class="waifu-tool">
+		<span class="fui-home"></span>
+		<span class="fui-chat"></span>
+		<span class="fui-eye"></span>
+		<span class="fui-user"></span>
+		<span class="fui-photo"></span>
+		<span class="fui-info-circle"></span>
+		<span class="fui-cross"></span>
+	</div>
+    <script src="https://suzengxin-blog.github.io/live2d/live2d.js"></script>
+	<script src="https://suzengxin-blog.github.io/live2d/waifu-tips.js"></script>
+</div>
+
+<!-- 内容 -->
+<div class="container-fluid">
+	<div class="row">
+		<div id="nav_left" class="col-sm-2 hidden-xs">
+			<ul>
+				<li class="active"><a href="#web" data-toggle="tab">WEB</a></li>
+			    <li><a href="#liunx" data-toggle="tab">LIUNX</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div id="content" class="col-xs-12 col-sm-9 col-sm-offset-2">
+			<ul id="blog" class="nav nav-tabs visible-xs">
+			    <li class="active"><a href="#web" data-toggle="tab">WEB</a></li>
+			    <li><a href="#liunx" data-toggle="tab">LIUNX</a></li>
+			</ul>
+			
+			<div id="blogContent" class="tab-content">
+			    <div class="tab-pane fade in active" id="web">
+			        <h2>WEB</h2>
+					<ol>
+						<li><a href="/html/web/1" target="_blank">怎么获取kindeditor中的内容</a></li>
+					</ol>
+			    </div>
+			    <div class="tab-pane fade" id="liunx">
+			        <h2>LIUNX</h2>
+			    </div>
+			</div>
+			
+		</div>
+ 	</div>
+</div>
+</body>
+
+<style>
+	body {
+		background-image: url("https://suzengxin-blog.github.io/images/dnf_02.jpeg");
+		background-repeat: no-repeat; 
+		background-size: cover;
+		-webkit-background-size: cover;
+		-o-background-size: cover;
+		-moz-background-size: cover;
+		-ms-background-size: cover;
+	}
+	
+	#nav_left {
+		position: absolute;
+		top: 15vh;
+	}
+	
+	#nav_left ul li {
+		word-wrap: break-word;
+		word-break: normal;
+		font-size: 1vw;
+	}
+	
+	#nav_left ul li a:hover {
+		text-decoration: none;
+		color: #99ffff;
+	}
+	
+	#content {
+		height: 100vh;
+		background-color: rgba(255, 255, 255, 0.9);
+		overflow-x: scroll;
+		overflow-y: scroll;
+		color: #00868B;
+	}
+	
+	#content h2 {
+		font-size: 5vw;
+	}
+	
+	#content ol{
+		margin-left: 4vw;
+	}
+	
+	#content ol li {
+		font-size: 2vw;
+		line-height: 5vw;
+	}
+	
+	#content ol li a:hover {
+		text-decoration: none;
+		color: #99ffff;
+	}
+</style>
+<script>
+	
+</script>
+</html>
