@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>我的博客 - 倾城の陌</title>
+	<title>P标签超出DIV长度后自动换行 - 倾城の陌</title>
     
     <!-- jQuery(Bootstrap的JavaScript插件需要引入jQuery，务必在bootstrap.min.js之前引入) -->
 	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
@@ -44,34 +44,17 @@
 <!-- 内容 -->
 <div class="container-fluid">
 	<div class="row">
-		<div id="nav_left" class="col-sm-2 hidden-xs">
-			<ul>
-				<li class="active"><a href="#web" data-toggle="tab">WEB</a></li>
-			    <li><a href="#liunx" data-toggle="tab">LIUNX</a></li>
-			</ul>
-		</div>
-	</div>
-	
-	<div class="row">
-		<div id="content" class="col-xs-12 col-sm-9 col-sm-offset-2">
-			<ul id="blog" class="nav nav-tabs visible-xs">
-			    <li class="active"><a href="#web" data-toggle="tab">WEB</a></li>
-			    <li><a href="#liunx" data-toggle="tab">LIUNX</a></li>
-			</ul>
-			
-			<div id="blogContent" class="tab-content">
-			    <div class="tab-pane fade in active" id="web">
-			        <h2>WEB</h2>
-					<ol>
-						<li><a href="/html/web/1" target="_blank">怎么获取kindeditor中的内容</a></li>
-						<li><a href="/html/web/2" target="_blank">P标签超出DIV长度后自动换行</a></li>
-					</ol>
-			    </div>
-			    <div class="tab-pane fade" id="liunx">
-			        <h2>LIUNX</h2>
-			    </div>
-			</div>
-			
+		<div id="content" class="col-xs-12 col-sm-8 col-sm-offset-2">
+<h1>
+	P标签超出DIV长度后自动换行：
+</h1>
+<p>
+	<strong><span style="font-size:16px;">word-wrap: break-word;</span></strong><br />
+<strong><span style="font-size:16px;">word-break: normal;</span></strong> 
+</p>
+<p>
+	<br />
+</p>			
 		</div>
  	</div>
 </div>
@@ -87,47 +70,12 @@
 		-moz-background-size: cover;
 		-ms-background-size: cover;
 	}
-	
-	#nav_left {
-		position: absolute;
-		top: 15vh;
-	}
-	
-	#nav_left ul li {
-		word-wrap: break-word;
-		word-break: normal;
-		font-size: 1vw;
-	}
-	
-	#nav_left ul li a:hover {
-		text-decoration: none;
-		color: #99ffff;
-	}
-	
 	#content {
-		height: 100vh;
 		background-color: rgba(255, 255, 255, 0.7);
+		height: 100vh;
 		overflow-x: scroll;
 		overflow-y: scroll;
 		color: #00868B;
-	}
-	
-	#content h2 {
-		font-size: 5vw;
-	}
-	
-	#content ol{
-		margin-left: 4vw;
-	}
-	
-	#content ol li {
-		font-size: 2vw;
-		line-height: 5vw;
-	}
-	
-	#content ol li a:hover {
-		text-decoration: none;
-		color: #99ffff;
 	}
 </style>
 <script>
