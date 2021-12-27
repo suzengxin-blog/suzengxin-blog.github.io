@@ -73,6 +73,7 @@ function nav () {
 						"<div class='panel-body'>" + 
 							"<ol>" + 
 								"<li onclick='location=\"/html/web/rose\"'><span class='glyphicon glyphicon-heart'></span>玫<span></span>瑰</li>" + 
+								"<li onclick='location=\"/html/web/time\"'><span class='glyphicon glyphicon-time'></span>时<span></span>间</li>" + 
 							"</ol>" + 
 						"</div>" + 
 					"</div>" + 
